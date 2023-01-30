@@ -7,10 +7,10 @@ import { LineOptions, LineSeries } from "./data/LineChartData";
 const Chart = dynamic(() => import("react-apexcharts"), { ssr: false });
 
 type LineChartProps = {
-  ESGcomment:string
+  ESGcomment: string;
 };
 
-export const LineChartSection = ({ESGcomment}:LineChartProps) => {
+export const LineChartSection = ({ ESGcomment }: LineChartProps) => {
   return (
     <div css={st.root}>
       <div css={st.lineChart}>
@@ -53,9 +53,7 @@ export const LineChartSection = ({ESGcomment}:LineChartProps) => {
       </div>
       <div css={st.commentBox}>
         <Typography css={st.commentTitle}>ESG Comment</Typography>
-        <Typography css={st.comment}>
-        {ESGcomment}
-        </Typography>
+        <Typography css={st.comment}>{ESGcomment}</Typography>
       </div>
     </div>
   );

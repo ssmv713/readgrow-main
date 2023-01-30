@@ -1,157 +1,53 @@
 import { Typography } from "@mui/material";
 import { css } from "@emotion/react";
-import {NewsType} from "../../data/api/esg.dto"
+import { NewsType } from "../../data/api/esg.dto";
 type ArticleSectionProps = {
-  envItem: NewsType[] ;
-  
+  envItem: NewsType[];
+  socialItem: NewsType[];
+  govItem: NewsType[];
 };
 
-export const RightArticle = ({envItem}:ArticleSectionProps) => {
-
-  const envNews = [
-    {
-      title:"3백억 대 전세사기 또 적발…매매·전세 ‘동시진…",
-      NESG2:"[IC]",
-    },
-    {
-      title:"3백억 대 전세사기 또 적발…매매·전세 ‘동시진…",
-      NESG2:"[IC]",
-    },
-    {
-      title:"3백억 대 전세사기 또 적발…매매·전세 ‘동시진…",
-      NESG2:"[IC]",
-    },
-    {
-      title:"3백억 대 전세사기 또 적발…매매·전세 ‘동시진…",
-      NESG2:"[IC]",
-    },
-    {
-      title:"3백억 대 전세사기 또 적발…매매·전세 ‘동시진…",
-      NESG2:"[IC]",
-    },
-    {
-      title:"3백억 대 전세사기 또 적발…매매·전세 ‘동시진…",
-      NESG2:"[IC]",
-    },
-
-  ]
+export const RightArticle = ({
+  envItem,
+  socialItem,
+  govItem,
+}: ArticleSectionProps) => {
   return (
     <div css={st.bigRoot}>
       <div css={st.root}>
         <Typography css={st.articleTitle}>Environment</Typography>
         <ul>
-          {/* {envNews.map((it)=>(
+          {envItem.map((it) => (
             <li css={st.articleContainer}>
-            <div css={st.pink}></div>
-            <Typography css={st.gd}>{it.NESG2}</Typography>
-            <Typography css={st.article}>
-            {it.title}
-            </Typography>
-          </li>
-          ))}          */}
-           {envItem.map((it)=>(
-            <li css={st.articleContainer}>
-            <div css={st.pink}></div>
-            <Typography css={st.gd}>{it.NESG2}</Typography>
-            <Typography css={st.article}>
-            {it.title}
-            </Typography>
-          </li>
-          ))}  
+              <div css={st.pink}></div>
+              <Typography css={st.gd}>{it.NESG2}</Typography>
+              <Typography css={st.article}>{it.title}</Typography>
+            </li>
+          ))}
         </ul>
       </div>
       <div css={st.root}>
         <Typography css={st.articleTitle}>Social</Typography>
         <ul>
-          <li css={st.articleContainer}>
-            <div css={st.pink}></div>
-            <Typography css={st.gd}>[OW]</Typography>
-            <Typography css={st.article}>
-              직장 경력 쌓이면 대졸자 인정…'경험인정제' 도입
-            </Typography>
-          </li>
-          <li css={st.articleContainer}>
-            <div css={st.pink}></div>
-            <Typography css={st.gd}>[IC]</Typography>
-            <Typography css={st.article}>
-              3백억 대 전세사기 또 적발…매매·전세 ‘동시진…
-            </Typography>
-          </li>
-          <li css={st.articleContainer}>
-            <div css={st.pink}></div>
-            <Typography css={st.gd}>[CO]</Typography>
-            <Typography css={st.article}>
-              삼성전자, 최신 스냅드래곤 탑재한 '갤럭시 북…
-            </Typography>
-          </li>
-          <li css={st.articleContainer}>
-            <div css={st.pink}></div>
-            <Typography css={st.gd}>[FR]</Typography>
-            <Typography css={st.article}>
-              직장 경력 쌓이면 대졸자 인정…'경험인정제' 도입
-            </Typography>
-          </li>
-          <li css={st.articleContainer}>
-            <div css={st.pink}></div>
-            <Typography css={st.gd}>[ET]</Typography>
-            <Typography css={st.article}>
-              직장 경력 쌓이면 대졸자 인정…'경험인정제' 도입
-            </Typography>
-          </li>
-          <li css={st.articleContainer}>
-            <div css={st.pink}></div>
-            <Typography css={st.gd}>[ET]</Typography>
-            <Typography css={st.article}>
-              직장 경력 쌓이면 대졸자 인정…'경험인정제' 도입
-            </Typography>
-          </li>
+          {socialItem.map((it) => (
+            <li css={st.articleContainer}>
+              <div css={st.pink}></div>
+              <Typography css={st.gd}>{it.NESG2}</Typography>
+              <Typography css={st.article}>{it.title}</Typography>
+            </li>
+          ))}
         </ul>
       </div>
       <div css={st.root}>
         <Typography css={st.articleTitle}>Governance</Typography>
         <ul>
-          <li css={st.articleContainer}>
-            <div css={st.pink}></div>
-            <Typography css={st.gd}>[OW]</Typography>
-            <Typography css={st.article}>
-              직장 경력 쌓이면 대졸자 인정…'경험인정제' 도입
-            </Typography>
-          </li>
-          <li css={st.articleContainer}>
-            <div css={st.pink}></div>
-            <Typography css={st.gd}>[IC]</Typography>
-            <Typography css={st.article}>
-              3백억 대 전세사기 또 적발…매매·전세 ‘동시진…
-            </Typography>
-          </li>
-          <li css={st.articleContainer}>
-            <div css={st.pink}></div>
-            <Typography css={st.gd}>[CO]</Typography>
-            <Typography css={st.article}>
-              삼성전자, 최신 스냅드래곤 탑재한 '갤럭시 북…
-            </Typography>
-          </li>
-          <li css={st.articleContainer}>
-            <div css={st.pink}></div>
-            <Typography css={st.gd}>[FR]</Typography>
-            <Typography css={st.article}>
-              직장 경력 쌓이면 대졸자 인정…'경험인정제' 도입
-            </Typography>
-          </li>
-          <li css={st.articleContainer}>
-            <div css={st.pink}></div>
-            <Typography css={st.gd}>[ET]</Typography>
-            <Typography css={st.article}>
-              직장 경력 쌓이면 대졸자 인정…'경험인정제' 도입
-            </Typography>
-          </li>
-          <li css={st.articleContainer}>
-            <div css={st.pink}></div>
-            <Typography css={st.gd}>[ET]</Typography>
-            <Typography css={st.article}>
-              직장 경력 쌓이면 대졸자 인정…'경험인정제' 도입
-            </Typography>
-          </li>
+          {govItem.map((it) => (
+            <li css={st.articleContainer}>
+              <div css={st.pink}></div>
+              <Typography css={st.gd}>{it.NESG2}</Typography>
+              <Typography css={st.article}>{it.title}</Typography>
+            </li>
+          ))}
         </ul>
       </div>
     </div>
@@ -210,5 +106,9 @@ const st = {
   article: css`
     font-size: 13px;
     font-weight: 600;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: 320px;
   `,
 };

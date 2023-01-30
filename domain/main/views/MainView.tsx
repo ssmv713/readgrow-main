@@ -18,15 +18,19 @@ export const MainView = () => {
       <TopTitle />
       <div css={st.container}>
         <div css={st.left}>
-          <TitleSection socialGrade={result.Social_Grade}
-           total={result.Total}
-           enviro={result.Enviornment_Grade}
-           gov={result.Governance_Grade}
-           firmname={result.firmname}/>
-          <StickGraph/>
-          <LineChartSection ESGcomment={result.ESGComment}/>
+          <TitleSection
+            socialGrade={result.Social_Grade}
+            total={result.Total}
+            enviro={result.Enviornment_Grade}
+            gov={result.Governance_Grade}
+            firmname={result.firmname}
+          />
+          <StickGraph />
+          <LineChartSection ESGcomment={result.ESGComment} />
         </div>
-        <RightArticle envTitle={result.Enviornment_News.item.title} />
+        <RightArticle envItem={result.Enviornment_News.item} 
+                  socialItem={result.Social_News.item}
+                  govItem={result.Governance_News.item}/>
       </div>
     </div>
   );
