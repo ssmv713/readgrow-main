@@ -17,8 +17,8 @@ export const RightArticle = ({
       <div css={st.root}>
         <Typography css={st.articleTitle}>Environment</Typography>
         <ul>
-          {envItem.map((it) => (
-            <li css={st.articleContainer}>
+          {envItem.map((it, index) => (
+            <li css={st.articleContainer} key={index}>
               <div css={st.pink}></div>
               <Typography css={st.gd}>{it.NESG2}</Typography>
               <Typography css={st.article}>{it.title}</Typography>
@@ -29,8 +29,8 @@ export const RightArticle = ({
       <div css={st.root}>
         <Typography css={st.articleTitle}>Social</Typography>
         <ul>
-          {socialItem.map((it) => (
-            <li css={st.articleContainer}>
+          {socialItem.map((it, index) => (
+            <li css={st.articleContainer} key={index}>
               <div css={st.pink}></div>
               <Typography css={st.gd}>{it.NESG2}</Typography>
               <Typography css={st.article}>{it.title}</Typography>
@@ -41,8 +41,8 @@ export const RightArticle = ({
       <div css={st.root}>
         <Typography css={st.articleTitle}>Governance</Typography>
         <ul>
-          {govItem.map((it) => (
-            <li css={st.articleContainer}>
+          {govItem.map((it, index) => (
+            <li css={st.articleContainer} key={index}>
               <div css={st.pink}></div>
               <Typography css={st.gd}>{it.NESG2}</Typography>
               <Typography css={st.article}>{it.title}</Typography>

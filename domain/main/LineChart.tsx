@@ -1,5 +1,6 @@
 import { css } from "@emotion/react";
 import { Typography } from "@mui/material";
+import { graph2Type } from "data/api/esg.dto";
 import dynamic from "next/dynamic";
 import { BarChartOptions, BarChartSeries } from "./data/BarChartdata";
 import { LineOptions, LineSeries } from "./data/LineChartData";
@@ -8,9 +9,24 @@ const Chart = dynamic(() => import("react-apexcharts"), { ssr: false });
 
 type LineChartProps = {
   ESGcomment: string;
+  graph2: graph2Type[];
+};
+const mapToGraph2 = (graph2ItemResponses: graph2Type[]) => {
+  const graph2Data = graph2ItemResponses.map((it) => ({
+    x: formattedDate(it.dt),
+    y: [it.value],
+  }));
+  console.log(graph2Data);
+  return graph2Data;
+
 };
 
-export const LineChartSection = ({ ESGcomment }: LineChartProps) => {
+const formattedDate = (v: string) => {
+  const splitedDate = v.split(",");
+  return new Date(parseInt(splitedDate[0]), parseInt(splitedDate[1]));
+};
+
+export const LineChartSection = ({ ESGcomment, graph2 }: LineChartProps) => {
   return (
     <div css={st.root}>
       <div css={st.lineChart}>
@@ -49,6 +65,7 @@ export const LineChartSection = ({ ESGcomment }: LineChartProps) => {
           type="bar"
           height={80}
           width={360}
+          graph2={mapToGraph2}
         />
       </div>
       <div css={st.commentBox}>

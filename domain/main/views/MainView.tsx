@@ -26,11 +26,16 @@ export const MainView = () => {
             firmname={result.firmname}
           />
           <StickGraph />
-          <LineChartSection ESGcomment={result.ESGComment} />
+          <LineChartSection
+            ESGcomment={result.ESGComment}
+            graph2={result.graph2}
+          />
         </div>
-        <RightArticle envItem={result.Enviornment_News.item} 
-                  socialItem={result.Social_News.item}
-                  govItem={result.Governance_News.item}/>
+        <RightArticle
+          envItem={result.Enviornment_News.item}
+          socialItem={result.Social_News.item}
+          govItem={result.Governance_News.item}
+        />
       </div>
     </div>
   );

@@ -1,4 +1,3 @@
-
 export type EsgDataResponse = {
   stock: string;
   firmname: string;
@@ -18,28 +17,29 @@ export type EsgDataResponse = {
     date: string;
     ESG: string;
   }[];
-  graph2: {
-    dt: string;
-    value: number;
-  }[];
+  graph2: graph2Type;
   ESGComment: string;
-  Enviornment_News:{
-    item:
-     NewsType[];
-  },
-  Social_News:{
-    item:
-     NewsType[];
-  },
-  Governance_News:{
-    item:
-     NewsType[];    
-  }
+  Enviornment_News: {
+    item: NewsType[];
+  };
+  Social_News: {
+    item: NewsType[];
+  };
+  Governance_News: {
+    item: NewsType[];
+  };
 };
 
-export type NewsType = {  
-    title : string;
-    NESG:string;
-    positive_signal: number;
-    NESG2: string;  
-}
+export type NewsType = {
+  title: string;
+  NESG: string;
+  positive_signal: number;
+  NESG2: string;
+};
+
+export type graph2Type = {
+  dt: string;
+  value: number;
+};
+
+
