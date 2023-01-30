@@ -11,21 +11,23 @@ type LineChartProps = {
   ESGcomment: string;
   graph2: graph2Type[];
 };
-const mapToGraph2 = (graph2ItemResponses: graph2Type[]) => {
-  const graph2Data = graph2ItemResponses.map((it) => ({
-    x: formattedDate(it.dt),
-    y: [it.value],
-  }));
-
-  return graph2Data;
-};
-console.log(mapToGraph2);
-const formattedDate = (v: string) => {
-  const splitedDate = v.split(",");
-  return new Date(parseInt(splitedDate[0]), parseInt(splitedDate[1]));
-};
 
 export const LineChartSection = ({ ESGcomment, graph2 }: LineChartProps) => {
+  const formattedDate = (v: string) => {
+    const splitedDate = v.split("-");
+    return new Date(parseInt(splitedDate[0]), parseInt(splitedDate[1]));
+  };
+  const mapToGraph2 = (graph2: graph2Type[]) => {
+    const graph2Data = graph2.map((it) => ({
+      x: formattedDate(it.dt),
+      y: [it.value],
+    }));
+
+    return graph2Data;
+  };
+  const data = mapToGraph2(graph2);
+  console.log(data);
+
   return (
     <div css={st.root}>
       <div css={st.lineChart}>
@@ -64,7 +66,7 @@ export const LineChartSection = ({ ESGcomment, graph2 }: LineChartProps) => {
           type="bar"
           height={80}
           width={360}
-          graph2={mapToGraph2}
+          data={mapToGraph2(graph2)}
         />
       </div>
       <div css={st.commentBox}>
