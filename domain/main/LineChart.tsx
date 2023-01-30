@@ -16,11 +16,10 @@ const mapToGraph2 = (graph2ItemResponses: graph2Type[]) => {
     x: formattedDate(it.dt),
     y: [it.value],
   }));
-  console.log(graph2Data);
+
   return graph2Data;
-
 };
-
+console.log(mapToGraph2);
 const formattedDate = (v: string) => {
   const splitedDate = v.split(",");
   return new Date(parseInt(splitedDate[0]), parseInt(splitedDate[1]));
@@ -142,9 +141,7 @@ const st = {
     border-radius: 10px;
     background-color: white;
     padding: 10px;
-    &:nth-child(2) {
-      z-index: 33;
-    }
+
     .apexcharts-gridline {
       stroke-width: 3px;
     }

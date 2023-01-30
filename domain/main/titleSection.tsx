@@ -1,8 +1,6 @@
 import { css } from "@emotion/react";
 import Typography from "@mui/material/Typography";
 
-
-
 type TitleSectionProps = {
   socialGrade: string;
   total: string;
@@ -18,7 +16,6 @@ export const TitleSection = ({
   gov,
   firmname,
 }: TitleSectionProps) => {
-
   const alphabets = [
     {
       label: "Total",
@@ -42,17 +39,14 @@ export const TitleSection = ({
     },
   ];
 
-
-
-
   return (
     <div>
       <div css={st.titleContainer}>
         <Typography css={st.ttile}>{firmname}</Typography>
 
         <ul css={st.alphabetContainer}>
-          {alphabets.map((it) => (
-            <li css={st.alphabetWrap}>
+          {alphabets.map((it, index) => (
+            <li css={st.alphabetWrap} key={index}>
               <div css={st.alphabetTotal(it.color)}>{it.data}</div>
               <Typography css={st.btmText}>{it.label}</Typography>
             </li>

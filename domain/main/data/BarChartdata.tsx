@@ -11,7 +11,6 @@ export const BarChartSeries: ApexAxisChartSeries = [
         x: new Date(2022, 2, 2),
         y: [3],
       },
-
       {
         x: new Date(2022, 3, 2),
         y: [3],
